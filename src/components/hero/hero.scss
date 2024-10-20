@@ -1,0 +1,153 @@
+.hero {
+    height: calc(100vh - 100px);
+    background: linear-gradient( #eeecd9, #86e1e8);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  
+    .wrapper {
+      max-width: 1366px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+  
+    .textContainer {
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    h2 {
+      font-size: 30px;
+      color: rgba(123, 105, 190, 0.8);
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      font-weight: 300;
+      animation: fadeInDown 1s ease-out;
+    }
+  
+    h1 {
+      font-size: 60px;
+      font-weight: 700;
+      background: linear-gradient(45deg, #333, #7b69be);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+  
+    .buttons {
+      display: flex;
+      gap: 20px;
+      animation: fadeIn 1s ease-out 1s both;
+      margin-top: 10px;
+  
+      button {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+        background: linear-gradient(45deg, #7b69be, #86e1e8);
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 6px 8px rgb(108, 75, 184);
+        }
+  
+        &:active {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  
+    img {
+      position: absolute;
+      bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+    .slidingText {
+        position: absolute;
+        font-size: 150px; 
+        bottom: 30px; 
+        white-space: nowrap;
+        color: rgba(85, 114, 118, 0.368);
+        font-weight: bold;
+        width: 100%;
+        overflow: hidden;
+      }
+    
+      .slidingTextInner {
+        display: inline-block;
+        animation: slide 89s linear infinite; 
+        padding-left: 100%;
+      }
+    }
+  
+    @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 15;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
