@@ -1,24 +1,65 @@
-html{
+html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-}
-*{
+  }
+  
+  * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /*     font-family     */
-}
-body{
+  }
+  
+  body {
     background-color: #eeecd9;
-    color:#1334c7;
-}
-a{
+    color: #1334c7;
+  }
+  
+  a {
     text-decoration: none;
-    /*take the color from parents*/
     color: inherit;
-}
-section{
+  }
+  
+  section {
     height: 100vh;
     scroll-snap-align: center;
-}
+  }
+  
+  .no-snap {
+    scroll-snap-type: none;
+  }
+  
+  .projects-container {
+    overflow: hidden;
+  }
+  
+  .horizontal-scroll-container {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-section {
+    flex: 0 0 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
 
+  .progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: rgba(19, 52, 199, 0.2);
+    z-index: 1000;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #c7e70f;
+    transition: width 0.3s ease;
+  }

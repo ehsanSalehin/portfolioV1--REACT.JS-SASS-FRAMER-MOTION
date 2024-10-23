@@ -1,4 +1,5 @@
 import "./hero.scss"
+
 const Hero = () => {
     return (
         <div className="hero">
@@ -6,10 +7,13 @@ const Hero = () => {
                 <div className="textContainer">
                     <h2>Ehsan Salehin</h2>
                     <h1>Full-Stack Web Developer</h1>
-                    <div className="buttons">
+                    {/*.......<div className="buttons">
+                        
+                    <a href="#about-me">
+                        <button>About Me</button>
+                    </a>
                         <button>View Featured Projects</button>
-                        <button>Let's Connect</button>
-                    </div>
+                    </div> */}
                     <img src="./icons8-mouse-64.png" alt="scroll" />
                 </div>
             </div>
