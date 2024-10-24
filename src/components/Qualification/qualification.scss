@@ -1,0 +1,123 @@
+.qualification {
+    position: relative;
+    background-color: #0A2342;
+    color: #eeecd9;
+    padding: 20px;
+    
+    .madeBy {
+        background-color: #86e1e8; 
+        color: #0A2342; 
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 10px;
+        right: 600px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(134, 225, 232, 0.5);
+    }
+
+    .progress {
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding-top: 50px;    
+        text-align: center;
+        font-size: 36px;
+
+        h1 {
+            color: #86e1e8;
+            text-shadow: 0 0 10px #86e1e8;
+            font-size: 48px;
+        }
+
+        .progressBar {
+            height: 10px;
+            background-color: white;
+            box-shadow: 0 0 15px #86e1e8;
+            animation: progressBarAnimation 2s infinite alternate; /* Moving progress bar */
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 1366px;
+            height: 100%;
+            margin: auto;
+            gap: 50px;
+            border-left: 2px solid #86e1e8;
+            border-right: 2px solid #86e1e8;
+            box-shadow: 0 0 20px rgba(134, 225, 232, 0.5);
+
+            .imgContainer {
+                flex: 1;
+                height: 50%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .textContainer {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                color: #b0c4de;
+
+                a {
+                    color:#86e1e8; 
+                    text-decoration:none; 
+                    transition :color .3s ease, transform .3s ease;
+
+                    &:hover{
+                        color:#eeecd9; 
+                        transform :scale(1.05); 
+                        text-shadow :0 0 10px #eeecd9,0 0 20px #86e1e8; 
+                    }
+                }
+
+                h2 {
+                    font-size :72px; 
+                    color :#eeecd9; 
+                    text-shadow :0 0 5px #eeecd9; 
+
+                    &:hover{
+                        transform :translateY(-5px); 
+                        opacity :.9; 
+                        transition :transform .3s ease-in-out, opacity .3s ease-in-out; 
+                     }
+                }
+
+                p {
+                    color:#b0c4de; 
+                    font-size :20px;
+
+                    &:hover{
+                        transform :translateY(-5px); 
+                        opacity :.9; 
+                        transition :transform .3s ease-in-out, opacity .3s ease-in-out; 
+                     }
+                }
+            }
+        }
+    }
+}
+
+@keyframes progressBarAnimation {
+    from { width: 50%; }
+    to { width: 100%; }
+}

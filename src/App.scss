@@ -30,6 +30,53 @@ html {
   
   .projects-container {
     overflow: hidden;
+    background-color: #0A2342;
+    color: #04ab15; 
+    position: relative;
+  }
+  .scroll-text {
+    position: absolute;
+    white-space: nowrap;
+    width: calc(100vh*5.5);
+    font-size: 1.5rem; 
+    color: #00ff0075; 
+    transform: translateY(-50%);
+    animation-duration: 0s; 
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .line {
+    animation: scrollText 15s linear infinite;
+  }
+  
+  .line1 {
+    top: 10%;
+  }
+  
+  .line2 {
+    top: 25%;
+    animation-delay: 1s;
+  }
+  
+  .line3 {
+    top: 40%;
+    animation-delay: 2s;
+  }
+  
+  .line4 {
+    top: 55%;
+    animation-delay: 3s;
+  }
+  
+  .line5 {
+    top: 70%;
+    animation-delay: 4s;
+  }
+  
+  .line6 {
+    top: 85%;
+    animation-delay: 5s;
   }
   
   .horizontal-scroll-container {
@@ -60,6 +107,15 @@ html {
   
   .progress-bar {
     height: 100%;
-    background-color: #c7e70f;
+    background-color: #00AA00;
     transition: width 0.3s ease;
+  }
+
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }

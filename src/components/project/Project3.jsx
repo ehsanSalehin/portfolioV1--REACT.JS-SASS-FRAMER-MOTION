@@ -6,7 +6,6 @@ const Project3 = () => {
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const starsRef = useRef(null);
 
   const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
   const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
@@ -17,16 +16,7 @@ const Project3 = () => {
     mouseY.set(e.clientY - rect.top - rect.height / 2);
   };
 
-  useEffect(() => {
-    const stars = starsRef.current;
-    const moveStars = () => {
-      const y = window.scrollY;
-      stars.style.transform = `translateY(${y * 0.5}px)`;
-    };
-    window.addEventListener('scroll', moveStars);
-    return () => window.removeEventListener('scroll', moveStars);
-  }, []);
-
+ 
   // Project details
   const projectName = "Movie Web Application + Admin Dashboard";
   const projectImages = ["../../public/movie/6.png", "../../public/movie/4.png", "../../public/movie/7.png", "../../public/movie/8.png"];
@@ -36,7 +26,7 @@ const Project3 = () => {
 
   return (
     <div className="project3">
-      <div className="stars" ref={starsRef}></div>
+      <div className="stars"></div>
       <motion.div 
         className="project" 
         ref={containerRef}

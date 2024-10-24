@@ -2,24 +2,10 @@
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #6610F2;
   width: 100%;
   height: 100vh;
 }
 
-.project1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('./13.png');
-  background-size: auto;
-  background-repeat: repeat;
-  opacity: 0.2; 
-  z-index: 1;
-}
   .project {
     position: sticky;
     top: 50%;
@@ -33,14 +19,13 @@
   }
   
   .glass-box1 {
-    background: #f3459c;
+    background: #FF6B6B;
     border-radius: 20px;
     padding: 40px;
-    width: 80%;
     max-width: 1100px;
     width: 1000px;
     height: 600px;
-    opacity:1;
+    will-change: transform;
   
     h2 {
       text-align: center;
@@ -120,6 +105,18 @@
         background-color: #666604; 
       }
     }
+    
+  }
+
+  .mouse{
+    position: absolute;
+    margin-top: 111px;
+    right: 15px;
+    border-radius: 15px;
+    animation: bounce 2s infinite;
+    box-shadow: 0px 0px 10px rgba(56, 222, 53, 0.814);
+    background-color: #00ff0019;
+    margin-left: 15px;
   }
 
   .floating-object {
@@ -142,4 +139,17 @@
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
   }
-}
+
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }

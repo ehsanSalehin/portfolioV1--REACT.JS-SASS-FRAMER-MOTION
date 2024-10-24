@@ -31,7 +31,6 @@ const items=[
     "About Me",
     "Projects",
     "Qualifications",
-    "Contact",
 ]
     return(
         <motion.div className="Links" variants={variants}>

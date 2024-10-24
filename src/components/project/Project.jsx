@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import './Project.scss';
 
@@ -6,7 +6,6 @@ const Project = () => {
   const containerRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const starsRef = useRef(null);
 
   const rotateX = useTransform(mouseY, [-300, 300], [15, -15]);
   const rotateY = useTransform(mouseX, [-300, 300], [-15, 15]);
@@ -17,15 +16,6 @@ const Project = () => {
     mouseY.set(e.clientY - rect.top - rect.height / 2);
   };
 
-  useEffect(() => {
-    const stars = starsRef.current;
-    const moveStars = () => {
-      const y = window.scrollY;
-      stars.style.transform = `translateY(${y * 0.5}px)`;
-    };
-    window.addEventListener('scroll', moveStars);
-    return () => window.removeEventListener('scroll', moveStars);
-  }, []);
 
   // Project details
   const projectName = "Realtime Responsive Chat App";
@@ -36,7 +26,7 @@ const Project = () => {
 
   return (
     <div className="project1">
-      <div className="stars" ref={starsRef}></div>
+      <div className="stars"></div>
       <motion.div 
         className="project" 
         ref={containerRef}
@@ -65,6 +55,9 @@ const Project = () => {
           </a>
         </motion.div>
       </motion.div>
+
+      <img className="mouse" src="./21.png" alt="scroll" />
+
     </div>
   );
 };

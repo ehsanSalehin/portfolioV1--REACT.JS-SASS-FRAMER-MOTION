@@ -15,7 +15,7 @@ const Navbar =()=>{
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
                 >
-                {["Ehsan", "Salehin"].map((word, index) => (
+                {[].map((word, index) => (
                     <motion.span
                     key={index}
                     initial={{ opacity: 0, y: 15 }}

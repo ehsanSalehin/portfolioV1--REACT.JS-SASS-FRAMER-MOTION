@@ -36,7 +36,6 @@ const Toggle = ({ setOpen }) => {
       <svg width="50" height="50" viewBox="0 0 50 50">
         <Path
           variants={{
-            closed: { d: "M 10 15 L 40 15" },
             open: { d: "M 12 12 L 38 38" }
           }}
           animate={isOpen ? "open" : "closed"}
@@ -52,7 +51,6 @@ const Toggle = ({ setOpen }) => {
         />
         <Path
           variants={{
-            closed: { d: "M 10 35 L 40 35" },
             open: { d: "M 12 38 L 38 12" }
           }}
           animate={isOpen ? "open" : "closed"}

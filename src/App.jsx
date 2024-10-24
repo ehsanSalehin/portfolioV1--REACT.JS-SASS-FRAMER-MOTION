@@ -9,17 +9,14 @@ import Project2 from './components/project/Project2';
 import Project3 from './components/project/Project3';
 import Project4 from './components/project/Project4';
 import Project5 from './components/project/Project5';
+import Qualification from './components/Qualification/Qualification'
 
 
 const Qualifications = ({ visible }) => {
   if (!visible) return null;
-  return <section id="Qualifications">Resume</section>;
+  return <section id="Qualifications"><Qualification/></section>;
 };
 
-const Contact = ({ visible }) => {
-  if (!visible) return null;
-  return <section id="Contact">Contact</section>;
-};
 
 function App() {
   const projectsRef = useRef(null);
@@ -112,15 +109,6 @@ function App() {
     };
   }, [isProjectsVisible, isEnteringProjects]);
 
-  const getProjectStyle = (projectNumber) => {
-    if (projectNumber === 1 || projectNumber === 5) {
-      return {
-        opacity: 1 - transitionProgress,
-        filter: `blur(${transitionProgress * 5}px)`,
-      };
-    }
-    return {};
-  };
 
   return (
     <div className={`app-container ${isProjectsVisible ? 'no-snap' : ''}`}>
@@ -131,6 +119,7 @@ function App() {
       )}
       <section id="Home">
         <Navbar/>
+        
         <Hero/>
       </section>
       <section id="About Me"><Parallax type="me"/></section>
@@ -138,15 +127,71 @@ function App() {
       <section id="Projects"><Parallax type="projects"/></section>
       <section className="projects-container" ref={projectsRef}>
         <div className="horizontal-scroll-container">
-          <div className="project-section" style={getProjectStyle(1)}><Project/></div>
-          <div className="project-section"><Project2/></div>
+          <div className="project-section" ><Project/></div>
+          <div className="project-section" ><Project2/></div>
           <div className="project-section"><Project3/></div>
           <div className="project-section"><Project4/></div>
-          <div className="project-section" style={getProjectStyle(5)}><Project5/></div>
+          <div className="project-section" ><Project5/></div>
         </div>
+        <div className="scroll-text line line1">
+    {"console.log('Hello, World!'); console.log('This is a test message.'); console.log('JavaScript is fun!');" +
+    " alert('Welcome to my portfolio!'); const sum = (a, b) => a + b; console.log(`Sum: ${sum(5, 10)}`);" +
+    " for (let i = 0; i < 3; i++) { console.log(`Iteration ${i}`); }" +
+    " document.querySelector('body').style.back " +
+    "console.log('Hello, World!'); console.log('This is a test message.'); console.log('JavaScript is fun!');" +
+    " alert('Welcome to my portfolio!'); const sum = (a, b) => a + b; console.log(`Sum: ${sum(5, 10)}`);" +
+    " for (let i = 0; i < 3; i++) { console.log(`Iteration ${i}`); }" +
+    " document.querySelector('body').style.back "}
+</div>
+<div className="scroll-text line line2">
+    {"def greet(name): return f'Hello, {name}'; def farewell(name): return f'Goodbye, {name}'; print(greet('Alice'));" +
+    " numbers = [1, 2, 3, 4, 5]; squares = [x**2 for x in numbers]; print(squares);" +
+    " import math; print(math.pi); def factorial(n): return 1 if n == 0 else n * factorial(n-1);" +
+    " with open('file.txt', 'w') " +
+    "def greet(name): return f'Hello, {name}'; def farewell(name): return f'Goodbye, {name}'; print(greet('Alice'));" +
+    " numbers = [1, 2, 3, 4, 5]; squares = [x**2 for x in numbers]; print(squares);" +
+    " import math; print(math.pi); def factorial(n): return 1 if n == 0 else n * factorial(n-1);" +
+    " with open('file.txt', 'w') "}
+</div>
+<div className="scroll-text line line3">
+    {"<link rel='stylesheet' href='styles.css'> <script src='app.js'></script> <meta charset='UTF-8'>" +
+    " <div class='container'><p>This is a paragraph.</p></div>" +
+    " <button onclick='alert(\"Button clicked!\")'>Click Me</button>" +
+    " <input type='text' placeholder='Enter your name struct Point { int x, y; }; Point" +
+    "<link rel='stylesheet' href='styles.css'> <script src='app.js'></script> <meta charset='UTF-8'>" +
+    " <div class='container'><p>This is a paragraph.</p></div>" +
+    " <button onclick='alert(\"Button clicked!\")'>Click Me</button>" +
+    " <input type='text' placeholder='Enter your name struct Point { int x, y; }; Point"}
+</div>
+<div className="scroll-text line line4">
+    {"class Car: def __init__(self, make, model): self.make = make; self.model = model; def drive(self): print(f'Driving {self.make} {self.model}');" +
+    " interface Vehicle { void start(); void stop(); } class Bike implements Vehicle { public void start() { System.out.println(\"Bike started\"); } public void stop() " +
+    "class Car: def __init__(self, make, model): self.make = make; self.model = model; def drive(self): print(f'Driving {self.make} {self.model}');" +
+    " interface Vehicle { void start(); void stop(); } class Bike implements Vehicle { public void start() { System.out.println(\"Bike started\"); } public void stop() "}
+</div>
+<div className="scroll-text line line5">
+    {"if __name__ == '__main__': main(); print('Program started'); for i in range(5): print(i);" +
+    " try: x = int(input(\"Enter a number: \")); except ValueError: print(\"That's not a number!\");" +
+    " const fs = require('fs'); fs.readFile('file.txt', 'utf8', (err, data) => { if (err) throw err; console.log(data); });" +
+    " async function" +
+    "if __name__ == '__main__': main(); print('Program started'); for i in range(5): print(i);" +
+    " try: x = int(input(\"Enter a number: \")); except ValueError: print(\"That's not a number!\");" +
+    " const fs = require('fs'); fs.readFile('file.txt', 'utf8', (err, data) => { if (err) throw err; console.log(data); });" +
+    " async function"}
+</div>
+<div className="scroll-text line line6">
+    {"import React from 'react'; import { useState } from 'react'; const App = () => <h1>Hello React</h1>;" +
+    " useEffect(() => { document.title = \"New Title\"; }, []);" +
+    " const [count, setCount] = useState(0); return (<button onClick={() => setCount(count + 1)}>{count}</button>);" +
+    " export default function My" + 
+	"import React from 'react'; import { useState } from 'react'; const App = () => <h1>Hello React</h1>;" + 
+	" useEffect(() => { document.title = \"New Title\"; }, []);" + 
+	" const [count, setCount] = useState(0); return (<button onClick={() => setCount(count + 1)}>{count}</button>);" + 
+	" export default function My"}
+</div>
       </section>
       <Qualifications visible={!isProjectsVisible || currentProject === 5} />
-      <Contact visible={!isProjectsVisible || currentProject === 5} />
+
     </div>
   );
 }
